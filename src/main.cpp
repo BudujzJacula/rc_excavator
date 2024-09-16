@@ -1,21 +1,24 @@
 #include <Arduino.h>
+#include <SPI.h>
+#include "Wire.h"
+#include "Adafruit_PWMServoDriver.h"
 
-// put function declarations here:
-int myFunction(int, int);
+// default address 0x40
+Adafruit_PWMServoDriver pwm = Adafruit_PWMServoDriver();
+
 
 void setup() {
   // put your setup code here, to run once:
-  int result = myFunction(2, 3);
   Serial.begin(9600);
+  pwm.begin();
+  pwm.setPWMFreq(1000);
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
   Serial.println("Hello, World!");
+  pwm.setPWM(15, 0, 4096);
   delay(1000);
-}
-
-// put function definitions here:
-int myFunction(int x, int y) {
-  return x + y;
+  pwm.setPWM(15, 4096, 0);
+  delay(1000);
 }
