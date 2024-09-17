@@ -52,7 +52,7 @@ void drive_motor(uint8_t pinA, uint8_t pinB, uint8_t direction, uint16_t speed) 
   }
 }
 
-void drive_axis(Actuators motor, uint8_t direction, uint16_t speed) {
+void drive_actuator(Actuators motor, uint8_t direction, uint16_t speed) {
   switch (motor)
   {
   case LEFT_DRIVE:
@@ -105,22 +105,22 @@ void loop() {
   // put your main code here, to run repeatedly:
   Serial.println("Hello, World!");
 
-  drive_axis(LEFT_DRIVE, 0, 2048);
-  drive_axis(RIGHT_DRIVE, 0, 2048);
-  drive_axis(SWING_MOTOR, 0, 2048);
-  drive_axis(ARM, 0, 2048);
-  drive_axis(DIPPER, 0, 2048);
-  drive_axis(BUCKET, 0, 2048);
-  drive_axis(THUMB, 0, 2048);
-  drive_axis(AUX, 0, 2048);
+  drive_actuator(LEFT_DRIVE, 0, 2048);
+  drive_actuator(RIGHT_DRIVE, 0, 2048);
+  drive_actuator(SWING_MOTOR, 0, 2048);
+  drive_actuator(ARM, 0, 2048);
+  drive_actuator(DIPPER, 0, 2048);
+  drive_actuator(BUCKET, 0, 2048);
+  drive_actuator(THUMB, 0, 2048);
+  drive_actuator(AUX, 0, 2048);
   delay(1000);
-  drive_axis(LEFT_DRIVE, 1, 2048);
-  drive_axis(RIGHT_DRIVE, 1, 2048);
-  drive_axis(SWING_MOTOR, 1, 2048);
-  drive_axis(ARM, 1, 2048);
-  drive_axis(DIPPER, 1, 2048);
-  drive_axis(BUCKET, 1, 2048);
-  drive_axis(THUMB, 1, 2048);
-  drive_axis(AUX, 1, 2048);
+  drive_actuator(LEFT_DRIVE, 1, 2048);
+  drive_actuator(RIGHT_DRIVE, 1, 2048);
+  drive_actuator(SWING_MOTOR, 1, 2048);
+  drive_actuator(ARM, 1, 2048);
+  drive_actuator(DIPPER, 1, 2048);
+  drive_actuator(BUCKET, 1, 2048);
+  drive_actuator(THUMB, 1, 2048);
+  drive_actuator(AUX, 1, 2048);
   delay(1000);
 }
